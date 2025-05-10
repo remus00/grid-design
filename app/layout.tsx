@@ -1,10 +1,6 @@
+import { cn, nura } from '@/lib/utils';
 import type { Metadata } from 'next';
 import './globals.css';
-
-// const geistSans = Geist({
-//     variable: '--font-geist-sans',
-//     subsets: ['latin'],
-// });
 
 export const metadata: Metadata = {
     title: 'Create Next App',
@@ -18,7 +14,9 @@ export default function RootLayout({
 }>) {
     return (
         <html lang="en">
-            <body className={`antialiased`}>{children}</body>
+            <body className={cn('antialiased', nura.className, nura.variable)}>
+                {children}
+            </body>
         </html>
     );
 }
