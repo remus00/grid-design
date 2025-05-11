@@ -1,3 +1,4 @@
+import { Navbar } from '@/components/navbar';
 import { cn, nura } from '@/lib/utils';
 import type { Metadata } from 'next';
 import './globals.css';
@@ -13,9 +14,12 @@ export default function RootLayout({
     children: React.ReactNode;
 }>) {
     return (
-        <html lang="en">
+        <html lang="en" className="bg-black-100 text-black-200">
             <body className={cn('antialiased', nura.className, nura.variable)}>
-                {children}
+                <main className="mx-auto flex max-w-[1512px] flex-col gap-8 p-8">
+                    <Navbar />
+                    <div className="h-[calc(100dvh-198px)] w-full">{children}</div>
+                </main>
             </body>
         </html>
     );
